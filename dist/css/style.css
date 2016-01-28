@@ -1,0 +1,73 @@
+.table {
+    display: table;   /* Allow the centering to work */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header {
+    box-shadow: 0px 5px 25px 0px black;
+    background-color: beige;
+}
+
+.title {
+    display: inline-block;
+    margin-left: 100px;
+}
+
+
+.question {
+    text-align: center;
+    font-size: 25px;
+    margin: 29px 0 0 0;
+}
+
+ul.horizontal-list {
+    min-width: 696px;
+    list-style: none;
+    padding-top: 20px;
+}
+ul.horizontal-list li {
+    display: inline;
+    margin: 30px;
+}
+ul.horizontal-list li button {
+    box-shadow: 0 0 4px 1px black;
+    padding: 10px;
+    cursor: default;
+}
+ul.horizontal-list li button:hover {
+    box-shadow: 0 0 4px 1px yellowgreen;
+}
+
+.correct {
+    background-color: green;
+}
+
+.actionsContainer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.actionsContainer .actionButton {
+    width: 150px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.likeAButton {
+    appearance: button;
+    -moz-appearance: button;
+    -webkit-appearance: button;
+    text-decoration: none; font: menu; color: ButtonText;
+    display: inline-block; padding: 2px 8px;
+    cursor: default;
+}
+
+
+.resultsButton {
+    position: absolute;
+    right: 100px;
+    display: inline-block;
+    top: 22px;
+    padding: 15px;
+}

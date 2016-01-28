@@ -1,3 +1,8 @@
-/**
- * Created by Tomas on 27/01/2016.
- */
+import React from 'react';
+
+export default React.createClass({
+    render: function() {
+        "use strict";
+        return this.props.children;
+    }
+});

@@ -1,29 +1,46 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import {connect} from 'react-redux';
-import * as actionCreators from '../action_creators';
 
-
-console.log('rendering voting component');
-
-export const Voting = React.createClass({
+export const Pregunta = React.createClass({
     mixins: [PureRenderMixin],
+    getCurrentQuestion: function() {
+        return this.props.pregunta;
+    },
+    getOptions: function() {
+        return this.getCurrentQuestion().get('options');
+    },
+    hasAnswered: function() {
+        return Boolean(this.getCurrentQuestion().get('answered'));
+    },
+    classWhenAnswered: function(index) {
+        if(!this.hasAnswered()) {
+            return null;
+        }
+
+        return this.getCurrentQuestion().get('correctAnswer') == index ? "correct" : null;
+    },
     render: function() {
         "use strict";
         return <div>
-        {this.props.winner ?
-        <Winner ref="winner" winner={this.props.winner} /> :
-        <Vote {...this.props} />}
+                <p className="question">{this.getCurrentQuestion().get('question')}</p>
+                <div className="table">
+                    <ul className="horizontal-list">
+                        {this.getOptions().map((entry, index) => {
+                            return <li key={index}>
+                                <button
+                                    onClick={this.props.answer.bind(this, index)}
+                                    disabled={this.hasAnswered()}
+                                    className={this.classWhenAnswered(index)}
+                                >
+                                    {entry}
+                                </button>
+                            </li>
+                        })}
+                    </ul>
+                </div>
+                <div className="actionsContainer">
+                    {this.hasAnswered() ? <button className="actionButton" onClick={this.props.next.bind(this)}>Siguiente</button> : null}
+              </div>
         </div>;
     }
 });
-
-function mapStateToProps(state) {
-    "use strict";
-    return {
-        pair: state.getIn(['vote', 'pair']),
-        hasVoted: state.get('hasVoted'),
-        winner: state.get('winner')
-    };
-}
-export const VotingContainer = connect(mapStateToProps, actionCreators)(Voting);
