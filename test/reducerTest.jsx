@@ -9,21 +9,27 @@ suite('Reducer', () => {
     [
         {
             initialState: fromJS({
-                questions: [
-                    {
+                tasks: [
+                {
+                    questions: [
+                      {
                         question: "¿Cual es?",
                         options: [],
                         answered: false,
                         userAnswer: null,
                         correctAnswer: 1,
                         isCorrect: null
-                    }
-                ],
-                current: 0
+                      }
+                    ],
+                    current: 0
+                }
+              ]
             }),
-            action: {type: 'ANSWER', answer: 1},
+            action: {type: 'ANSWER', answer: 1, inTask: 0},
             expected: fromJS({
-                questions: [
+                tasks: [
+                  {
+                    questions: [
                     {
                         question: "¿Cual es?",
                         options: [],
@@ -32,12 +38,16 @@ suite('Reducer', () => {
                         correctAnswer: 1,
                         isCorrect: true
                     }
-                ],
-                current: 0
+                    ],
+                    current: 0
+                  }
+                ]
             })
         },
         {
             initialState: fromJS({
+              tasks: [
+                {
                 questions: [
                     {
                         question: "¿Cual es?",
@@ -57,9 +67,12 @@ suite('Reducer', () => {
                     }
                 ],
                 current: 0
+              }]
             }),
-            action: {type: 'NEXT'},
+            action: {type: 'NEXT', inTask: 0},
             expected: fromJS({
+              tasks: [
+                {
                 questions: [
                     {
                         question: "¿Cual es?",
@@ -79,11 +92,15 @@ suite('Reducer', () => {
                     }
                 ],
                 current: 1
+              }
+            ]
             })
         },
         {
             initialState: fromJS({
-                questions: [
+              tasks: [
+                {
+                  questions: [
                     {
                         question: "¿Cual es?",
                         options: [],
@@ -92,11 +109,15 @@ suite('Reducer', () => {
                         correctAnswer: 1,
                         isCorrect: true
                     }
-                ],
-                current: 0
+                  ],
+                  current: 0
+                }
+              ]
             }),
-            action: {type: 'NEXT'},
+            action: {type: 'NEXT', inTask: 0},
             expected: fromJS({
+              tasks: [
+                {
                 questions: [
                     {
                         question: "¿Cual es?",
@@ -108,6 +129,8 @@ suite('Reducer', () => {
                     }
                 ],
                 current: 0
+              }
+            ]
             })
         }
     ].
