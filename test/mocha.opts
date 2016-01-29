@@ -1,0 +1,4 @@
+--ui tdd
+--compilers js:babel-register
+--require ./test/TestHelper.js
+test/**/*.{es6,jsx}
