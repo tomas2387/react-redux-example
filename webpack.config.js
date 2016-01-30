@@ -1,4 +1,5 @@
-var webpack = require('webpack');
+var webpack = require('webpack'),
+    SimpleHTMLPlugin = require('./src/devTools/SimpleHTMLPlugin');
 
 module.exports = {
     entry: [
@@ -6,6 +7,12 @@ module.exports = {
         'webpack/hot/dev-server',
         './src/index.jsx'
     ],
+    output: {
+        path: __dirname + '/dist/js',
+        publicPath: '/',
+        filename: 'bundle.js'
+    },
+
     module: {
         loaders: [
             {
@@ -22,16 +29,12 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.jsx']
     },
-    output: {
-        path: __dirname + '/dist',
-        publicPath: '/',
-        filename: 'bundle.js'
-    },
     devServer: {
         contentBase: './dist',
         hot: true
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new SimpleHTMLPlugin()
     ]
 };
