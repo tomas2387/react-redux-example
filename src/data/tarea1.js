@@ -1,4 +1,4 @@
-export const tarea1 = [
+export default [
     {
         question: "1001 La forma política del Estado español es…",
         options: [

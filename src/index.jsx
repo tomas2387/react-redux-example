@@ -7,13 +7,13 @@ import reducer from './reducer';
 import {setState} from './action_creators';
 import Router, {Route, IndexRoute} from 'react-router';
 import App from './components/App';
-import {ResultsContainer} from './components/Results';
-import {ExamenContainer} from './components/Examen';
+import ResultsContainer from './components/Results';
+import ExamenContainer from './components/Examen';
 import * as immutable from 'immutable';
-import {tarea1} from './data/tarea1';
-import {tarea2} from './data/tarea2';
-import {tarea3} from './data/tarea3';
-import {tarea4} from './data/tarea4';
+import tarea1 from './data/tarea1';
+import tarea2 from './data/tarea2';
+import tarea3 from './data/tarea3';
+import tarea4 from './data/tarea4';
 
 const state = immutable.fromJS(
     {
