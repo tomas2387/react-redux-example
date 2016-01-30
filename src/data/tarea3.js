@@ -1,4 +1,4 @@
-export const tarea3 = [
+export default [
     {
         question: "3001 ¿Qué comunidad autónoma forman Alicante, Castellón y Valencia?",
         options: [

@@ -1,7 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-export const Pregunta = React.createClass({
+export default React.createClass({
     mixins: [PureRenderMixin],
     getCurrentQuestion: function() {
         return this.props.pregunta;

@@ -3,7 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {connect} from 'react-redux';
 import * as actionCreators from '../action_creators';
 import {Link} from 'react-router';
-import {Pregunta} from './Pregunta';
+import Pregunta from './Pregunta';
 
 
 export const Examen = React.createClass({
@@ -45,4 +45,4 @@ function mapStateToProps(state) {
         tasks
     };
 }
-export const ExamenContainer = connect(mapStateToProps, actionCreators)(Examen);
+export default connect(mapStateToProps, actionCreators)(Examen);

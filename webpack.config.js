@@ -7,11 +7,17 @@ module.exports = {
         './src/index.jsx'
     ],
     module: {
-        loaders: [{
-            test: /\.jsx?$/,
-            loaders: ['react-hot', 'babel'],
-            exclude: /node_modules/
-        }]
+        loaders: [
+            {
+                test: /\.jsx?$/,
+                loaders: ['react-hot', 'babel'],
+                exclude: /node_modules/
+            },
+            {
+                test: /\.scss$/,
+                loaders: ["style", "css", "sass"]
+            }
+        ]
     },
     resolve: {
         extensions: ['', '.js', '.jsx']

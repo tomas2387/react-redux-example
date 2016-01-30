@@ -1,4 +1,4 @@
-export const tarea2 = [
+export default [
     {
         question: "2001 Los españoles tienen los mismos derechos fundamentales en cualquier parte del territorio del Estado.",
         options: ["Verdadero", "Falso"],

@@ -38,4 +38,4 @@ function mapStateToProps(state) {
     };
 }
 
-export const ResultsContainer = connect(mapStateToProps, actionCreators)(Results);
+export default connect(mapStateToProps, actionCreators)(Results);

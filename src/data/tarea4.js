@@ -1,4 +1,4 @@
-export const tarea4 = [
+export default [
     {
         question: "4001 Los personajes principales de la novela el Quijote son Don Quijote y…",
         options: [
